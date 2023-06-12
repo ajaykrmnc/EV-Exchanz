@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import "./style.css";
 import { signInWithEmailAndPassword,createUserWithEmailAndPassword,signInWithPopup,GoogleAuthProvider } from "firebase/auth";
 import { auth,provider } from "fireboss";
 import { useNavigate } from "react-router-dom";

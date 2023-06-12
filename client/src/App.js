@@ -15,7 +15,7 @@ import Success from 'components/success/success';
 import Providerlogin from 'components/providerLogin/providerlogin';
 import Providerdashboard from 'components/providerLogin/providerdashboard';
 import Profile from 'components/Consumer/profile';
-import Errorpage from 'Error/Errorpage';
+import Errorpage from 'components/Error/Errorpage';
 import Battery from 'Batterydetail/Battery';
 import BatteryDetails from 'Batterydetail/batterydetail';
 

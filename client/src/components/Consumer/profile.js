@@ -2,6 +2,7 @@ import React from 'react';
 import "./profile.css"
 import {useState,useEffect} from 'react'
 import axios from 'axios';
+import {API} from 'config'
 
 const Profile = ({user}) => {
     const [view,setView]=useState(false);
@@ -9,7 +10,7 @@ const Profile = ({user}) => {
     const [flag,setFlag]=useState(false);
 
     const getClient=async()=>{
-      await axios.get(`https://evexchanz.herokuapp.com/client/${user.uid}`)
+      await axios.get(`${API}/client/${user.uid}`)
       .then(res=>{
           
           setClient({...client,MobNo: res.data[0].MobNo,Address: res.data[0].Address,count: res.data[0].order.length})
@@ -42,7 +43,7 @@ const Profile = ({user}) => {
   }
   const handleSubmit= async(e)=>{
       e.preventDefault();
-      await axios.post(`https://evexchanz.herokuapp.com/client/`,client)
+      await axios.post(`${API}/client/`,client)
       .then(res=>{
          console.log(res);
         

@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import {  useParams } from 'react-router-dom';
 import Success from 'components/success/success';
+import {API} from 'config'
 
   
   
@@ -29,14 +30,14 @@ const Client = ({user}) => {
     }
     const handleSubmit= async(e)=>{
         e.preventDefault();
-        await axios.patch(`https://evexchanz.herokuapp.com/client/${user.uid}`)
+        await axios.patch(`${API}/client/${user.uid}`)
         .then(res=>{
                 
         })
         .catch(err=>{
 
         })
-        await axios.patch(`https://evexchanz.herokuapp.com/provider/${place_id}`,client)
+        await axios.patch(`${API}/provider/${place_id}`,client)
         .then(res=>{
             console.log(res);
             console.log(client)

@@ -11,6 +11,7 @@ import {
 } from "@react-google-maps/api";
 import { useNavigate } from 'react-router-dom';
 import { stringify } from '@firebase/util';
+import { API } from 'config';
 
   
 const Provider = ({user}) => {
@@ -53,7 +54,7 @@ const Provider = ({user}) => {
 
     const handleSubmit= async(e)=>{
         e.preventDefault();
-        await axios.post("https://evexchanz.herokuapp.com/provider",provider)
+        await axios.post("${API}/provider",provider)
         .then(res=>{
             console.log(res);
             console.log(provider)

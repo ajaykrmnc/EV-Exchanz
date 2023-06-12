@@ -1,8 +1,10 @@
 import React from 'react';
+import { API } from 'config';
+
 const Payment = () => {
     const handleClick=() => 
    {
-        fetch("https://evexchanz.herokuapp.com/create-checkout-session", {
+        fetch(`${API}/create-checkout-session`, {
             method: "POST",
             headers: {
             "Content-Type": "application/json",

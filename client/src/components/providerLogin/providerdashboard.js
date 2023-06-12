@@ -2,15 +2,14 @@ import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import Success from 'components/success/success';
 import Navbar from 'components/Navbar/Navbar';
-
-
+import { API } from 'config';
 
 const Providerdashboard = ({user}) => {
     const [Orders,setOrders]=useState([]);
     const [error,setError]=useState("");
     const [flag,setFlag]=useState(false);
     const getOrders=async()=>{
-        await axios.get(`https://evexchanz.herokuapp.com/provider/order/${user.uid}`)
+        await axios.get(`${API}/provider/order/${user.uid}`)
         .then(res=>{
             setOrders(JSON.stringify(res.data));
             const Data={...res.data[0]};

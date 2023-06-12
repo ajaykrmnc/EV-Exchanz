@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import axios from 'axios';
 import Success from 'components/success/success';
+import { API } from 'config';
 
 
 const Providerlogin = ({user}) => {
@@ -8,7 +9,7 @@ const Providerlogin = ({user}) => {
     const [view,setView]=useState(false);
     const [error,setError]=useState("");
     const getOrders=async()=>{
-        await axios.get(`https://evexchanz.herokuapp.com/provider/order/${user.uid}`)
+        await axios.get(`${API}/${user.uid}`)
         .then(res=>{
             console.log(res);
             setOrders(res);
