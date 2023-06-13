@@ -1,5 +1,5 @@
 # E-Vehicle Solution-Battex
-<img src="https://xparkle.netlify.app/LOGO.png" alt="Battex Logo" width="400" />
+<img src="https://xparkle.netlify.app/LOGO.png" alt="Battex Logo" width="200" />
 
 This repository contains the code for an innovative solution developed during the hackathon at MMDU Ambala. Our team, consisting of Ajay Kumar, Abhishek Kumar, Achintya Arya, and Sougato, collaborated to design and implement a solution for the problem of e-vehicle charging stations.
 
