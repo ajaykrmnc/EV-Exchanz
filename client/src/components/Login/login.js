@@ -4,6 +4,7 @@ import { auth,provider } from "fireboss";
 import { useNavigate } from "react-router-dom";
 import {AuthContext} from "context/AuthContext"
 import { Google } from "react-bootstrap-icons";
+import "./style.css"
 
 const Login = () => {
   const [error, setError] = useState(false);
@@ -88,52 +89,112 @@ const Login = () => {
 
 
   return (
-    <div className="d-flex justify-content-center align-items-center " style={{height: "80vh"}} >
-
-    <div className="h-custom login bg-light form-body">
-       <h2 className="text-center text-primary font-weight-bolder">{isSignup? 'Signup': 'Login' }</h2>
-      {error&& !isSignup && <span className="text-danger text-center pb-2 ">Wrong email or password!</span>}
-      <form onSubmit={handleLogin}>
-        <div className="form-group input-group-lg">
-        <label className="text-start">
-          Email
-        </label>
-        <input
-          type="email"
-          placeholder="email"
-          aria-label="Large"
-          className="form-control  mt-1 mb-3"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label>
-          password
-        </label>
-        <input
-          type="password"
-          placeholder="password"
-          className="form-control mt-1 mb-3"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit" className="btn btn-md  p-2 btn-primary w-100">{ isSignup ? 'SignUp' : 'Login'}</button>
-        </div>
-        
-      </form>
-      {
-        (!isSignup)&&
-
-          <div>
-            <button className="btn btn-danger p-2 w-100 mt-2" onClick={googleLogin}>
-              <Google /> Signin using Google account
-
+    <>
+    <div className="body">
+      <div id="box_background1"></div>
+      <div
+        className="shadow-lg bg-white rounded"
+        style={{
+          width: "70vw",
+          height: "80vh",
+          display: "flex",
+          position: "fixed",
+        }}
+      >
+        <img src="signup.png" alt="#" style={{ width: "40vw" }} id="img" />
+        <div
+          className="container mx-4"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
+        >
+           <h2 className=" font-weight-bolder">{isSignup? 'Signup': 'Login' }</h2>
+          {error&& !isSignup && <span className="text-danger text-center pb-2 ">Wrong email or password!</span>}
+          <form onSubmit={handleLogin}>
+            <br />
+            <div className="mb-3">
+              <label for="exampleInputEmail1" className="form-label">
+                Email address*
+              </label>
+              <div className="input-group mb-2">
+                <span className="input-group-text" id="basic-addon1">
+                  <ion-icon name="person" />
+                </span>
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="email"
+                  aria-label="email"
+                  aria-describedby="basic-addon1"
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <div id="emailHelp" className="form-text">
+                We'll never share your email with anyone else.
+              </div>
+            </div>
+            <label
+              for="exampleInputEmail1"
+              className="form-label"
+              type="password"
+              placeholder="Password"
+            >
+              Password*
+            </label>
+            <div className="input-group">
+            <span className="input-group-text" id="basic-addon1">
+                  <ion-icon name="person" />
+            </span>
+            <input
+                className="form-control"
+                placeholder="password"
+                aria-label="password"
+                aria-describedby="basic-addon1"
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="my-3 form-check">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="exampleCheck1"
+              />
+              <label className="form-check-label" for="exampleCheck1">
+                Remember me
+              </label>
+            </div>
+            <button
+              className="btn btn-primary d-grid gap-2 col-6 my-1"
+              type="submit"
+            >
+              { isSignup ? 'SignUp' : 'Login'}
             </button>
-          </div>
-      }
-      <button className="mt-3 p-0 btn btn-light" onClick={switchMode}>
-                { isSignup ? 'Already have an account? Sign in' : "New to Memories? Sign Up" }
-      </button>
-      
+            <div className="py-2">
+            <button className="mt-3 p-0 btn btn-light" onClick={switchMode}>
+                { isSignup ? 'Already have an account? Sign in' : "New to Battex? Sign Up" }
+            </button>
+            </div>
+          </form>
+          {
+            (!isSignup)&&
+
+              <div>
+                <p classNmae = "text-center">-- Or Sign in With --</p>
+                <button className="btn btn-primary p-2 text-white mt-2 d-flex align-items-center" onClick={googleLogin}>
+                  <Google />&nbsp;Google 
+
+                </button>
+              </div>
+          }
+        </div>
+      </div>
+      <div id="box_background2"></div>
     </div>
-    </div>
+    </>
   );
 };
 

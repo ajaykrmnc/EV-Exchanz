@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import {  useParams } from 'react-router-dom';
 import Success from 'components/success/success';
 import {API} from 'config'
+import login from './login.jpg'
 
   
   
@@ -20,7 +21,6 @@ const Client = ({user}) => {
         Address: '' ,
         email: '',
         userId: user.uid,
-        
     })
 
 
@@ -55,37 +55,112 @@ const Client = ({user}) => {
 
     return ( 
         <>
-       <div className='d-flex justify-content-center m-2 '>
-        <form className=' w-50 bg-light p-4 formclass rounded'>
-            <h1 className='text-info mb-4'>Enter your Details</h1>
-            <div className="row">
-                <div className="form-group col-md-6">
-                <label>Name</label>
-                <input type="text" className="form-control" name="Name"  onChange={handleChange}  placeholder="Email" />
-                </div>
-                <div className="form-group col-md-6">
-                <label>Email</label>
-                <input type="email" className="form-control" name="Email" onChange={handleChange} placeholder="Email" />
-                </div>
+    <div className="body">
+      <div id="box_background1"></div>
+      <div
+        className="shadow-lg bg-white rounded"
+        style={{
+          width: "70vw",
+          height: "80vh",
+          display: "flex",
+          position: "fixed",
+        }}
+      >
+        <img src={login} alt="#" style={{ width: "40vw" }} id="img" />
+        <div
+          className="container mx-4"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
+        >
+           <h2 className=" font-weight-bolder">Submit Your Detail</h2>
+          <form onSubmit={handleSubmit}>
+            <br />
+            <div className="mb-3">
+              <label for="exampleInputEmail1" className="form-label">
+                Email address*
+              </label>
+              <div className="input-group mb-2">
+                <span className="input-group-text" id="basic-addon1">
+                  <ion-icon name="person" />
+                </span>
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="email"
+                  aria-label="email"
+                  aria-describedby="basic-addon1"
+                  onChange={handleChange}
+                  name= "email"
+                  required
+                />
+                <span className="input-group-text" id="basic-addon1">
+                  <ion-icon name="person" />
+                </span>
+                <input
+                  className="form-control"
+                  placeholder="Mob No"
+                  aria-label="Mob No"
+                  aria-describedby="basic-addon1"
+                  onChange={handleChange}
+                  name= "MobNo"
+                  required
+                />
+              </div>
+              <div id="emailHelp" className="form-text">
+                We'll never share your email with anyone else.
+              </div>
             </div>
-            <div className="form-group">
-                <label >Orders</label>
-                <input type="text" className="form-control" name="orders" onChange={handleChange} placeholder="Number of Order"/>
-                <label >Contact no</label>
-                <input type="text" className="form-control" name="MobNo" onChange={handleChange} placeholder="Enter Mob No"/>
-                <label >Address</label>
-                <input type="text" className="form-control" name="Address" onChange={handleChange} placeholder="Enter the Address"/>
-                <label >Comment If any</label>
-                <textarea type="text" className='form-control' name="comment" onChange={handleChange} placeholder="Comment" />
-                
+            <label
+            >
+            Name
+            </label>
+            <div className="input-group">
+            <span className="input-group-text" id="basic-addon1">
+                  <ion-icon name="person" />
+            </span>
+            <input
+                className="form-control"
+                placeholder="Name"
+                aria-label="password"
+                aria-describedby="basic-addon1"
+                onChange={handleChange}
+                required
+                name = "name"
+              />
+    
             </div>
-            <div className='d-flex justify-content-center' style={{postion: 'relative'}}>
-
-                
+            <label className= "mt-4">
+                Address
+            </label>
+            <div className="input-group mb-4">
+            <span className="input-group-text" id="basic-addon1">
+                  <ion-icon name="person" />
+            </span>
+            <input
+                className="form-control"
+                placeholder="Address"
+                aria-describedby="basic-addon1"
+                onChange={handleChange}
+                required
+                name = "Address"
+              />
+    
             </div>
-                <button onClick={handleSubmit}  className="btn btn-primary my-4">Submit Detail</button>
-            </form>
+            <button
+              className="btn btn-primary d-grid gap-2 col-6 my-1"
+              type="submit"
+            >
+                Submit
+            </button>
+          </form>
+          
         </div>
+      </div>
+      <div id="box_background2"></div>
+    </div>
         </>
 
      );

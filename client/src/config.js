@@ -1,1 +1,1 @@
-export const API = "https://evexchanze.onrender.com";
+export const API = "https://evexchanz.up.railway.app";

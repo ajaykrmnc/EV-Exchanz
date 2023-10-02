@@ -67,7 +67,7 @@ const Homepage = ({currentUser}) => {
                 <div>
                   <h1 className="textsamneka">Get Exchanged<br/> Or Charged</h1><h2>Your Battery</h2>
                   <h5 className="w-50 purpose"> The web-app is to provide EV owner the convenience of locating charging stations on aerial map, exchange the batteries, recommendations on paying charges online!</h5>
-                  <button className="btn btn-success btn-lg mt-4" href="/map" >Go to the station</button>
+                  <Link className="btn btn-success" to="/map" >Go to the station</Link>
                
                </div>
               
@@ -83,12 +83,6 @@ const Homepage = ({currentUser}) => {
             
 
           </div>
-          {/* <div className='nichevala'>
-            <div className="">Never wait to change</div>
-            <div className="circle"><img src='LOGO.png' style={{height: '6rem'}} alt="..."/></div>
-            <div className="">Swap the full Battery in seconds</div>
-
-          </div> */}
           
 
         </>

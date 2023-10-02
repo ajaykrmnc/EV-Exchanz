@@ -124,18 +124,17 @@ export default function Showmap({ width1, width2, className, pos }) {
                   alt="Cardcap"
                 /> */}
                 <div class="card-body">
-                  <h6 class="card-title">{hotel.name}</h6>
-                  <p class="card-text">{hotel.vicinity}</p>
-                  Available
+                  <h6 class="card-title text-bold">{hotel.name}</h6>
+                  <p>{hotel.vicinity}</p>
                   <div className="d-flex justify-content-between">
                   <button
                     onClick={() => dishaDikhao(hotel.geometry.location)}
-                    className="btn btn-primary"
+                    className="btn btn-outline-success"
                   >
                     See the direction
                   </button>
                   
-                  <button className="btn btn-primary" onClick={()=>redirectToClient(hotel.place_id)}>
+                  <button className="btn btn-outline-success" onClick={()=>redirectToClient(hotel.place_id)}>
                     Prebook 
                   </button>
 

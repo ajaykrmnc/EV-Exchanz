@@ -11,7 +11,6 @@ export const createBattery = async (req, res) => {
 
     try {
         newBattery.save();
-
         res.status(201).json(newBattery);
     } catch (error) {
         res.status(409).json({ message: error.message });

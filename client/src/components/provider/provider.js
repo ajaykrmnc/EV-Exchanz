@@ -167,11 +167,7 @@ const Provider = ({user}) => {
                     <input type="text col-6" className="form-control" disabled  placeholder={provider.lat}  />
                     <input type="text col-6" className='form-control' disabled placeholder={provider.lng}  />
                 </div>}
-
            
-          
-
-    
             <button  onClick={handleSubmit} className="btn btn-primary my-4">Submit Detail</button>
             
             </form>
